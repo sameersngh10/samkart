@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg bg-light sticky-top">
+  <div class="container m-0">
+    <a class="navbar-brand" routerLink="">
+      <img src="./assets/logo2.png" alt="logo" height="60px" />
+    </a>
+
+    <div class="forms active-cyan-3 active-cyan-4 d-flex mx-auto">
+      <form class="form-inline my-2 my-lg-0">
+        <!-- Search form -->
+
+        <input
+          class="form-control mr-sm-2"
+          type="text"
+          placeholder="Search"
+          aria-label="Search"
+        />
+      </form>
+      <button class="btn btn-outline-info my-0 my-sm-0" type="submit">
+        Search
+      </button>
+    </div>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ms-auto mb-2 mb-lg-0 text-primary">
+        <a
+          class="nav-link active text-black"
+          aria-current="page"
+          routerLink="/auth/login"
+          >Profile</a
+        >
+        <a class="nav-link text-black" routerLink="cart">cart</a>
+        <!-- <a class="nav-link text-black" routerLink="seller">Become a seller</a> -->
+      </div>
+    </div>
+  </div>
+</nav>
+<hr />

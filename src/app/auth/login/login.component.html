@@ -1,0 +1,201 @@
+<div class="container main">
+  <div class="container">
+    <div class="container-fluid border-primary border">
+      <h3 class="text-dark heading text-decoration-bold">Profile</h3>
+      <hr />
+      <div class="conatiner section">
+        <div class="row">
+          <div class="col-4">
+            <img
+              src="../../../assets/profilepicture.png"
+              alt="profilepicture"
+              class="img-fluid profileimage"
+            />
+          </div>
+
+          <div class="col-8">
+            <fieldset>
+              <legend class="form-group">Personal Information</legend>
+              <label for="name">Name:</label>
+              <div class="row">
+                <div class="col-5">
+                  <input
+                    type="text"
+                    value="Vishal"
+                    class="form-control text-muted"
+                    disabled
+                  />
+                  <label for="fname" class="form-text text-muted"
+                    >First Name
+                  </label>
+                </div>
+
+                <div class="col-5">
+                  <input
+                    type="text"
+                    value="Singh"
+                    class="form-control text-muted"
+                    disabled
+                  />
+                  <label for="lname" class="form-text text-muted"
+                    >Last Name</label
+                  >
+                </div>
+              </div>
+              <br />
+
+              <label for="Your Gender">Gender</label><br />
+              <input type="radio" checked /><label>Male</label><br />
+              <input type="radio" disabled /><label>Female</label><br /><br />
+
+              <label for="email">Email</label><br />
+              <input
+                type="email"
+                value="vishalsngh@hotmail.com"
+                disabled
+                class="form-control text-muted inpfield"
+              />
+              <br /><br />
+              <label for="mnumber" class="form-group">Mobile Number</label
+              ><br />
+              <input
+                type="text"
+                value="+919200033717"
+                class="form-control text-muted inpfield"
+                disabled
+              />
+            </fieldset>
+            <br />
+
+            <legend>Manage Address</legend>
+            <fieldset>
+              <button
+                class="btn btn-primary-nooultine text-primary form-group btnborder"
+                (click)="onAdd()"
+              >
+                + Add new address
+              </button>
+              <div [formGroup]="addressForm">
+                <div class="row">
+                  <h5 class="text-primary">Add New Address</h5>
+                  <br /><br />
+                  <div class="col-5">
+                    <input
+                      type="text"
+                      placeholder="name"
+                      formControlName="Addname"
+                      class="form-control"
+                    />
+                    <label for="name" class="form-group text-muted">Name</label>
+                  </div>
+                  <div class="col-5">
+                    <input
+                      type="number"
+                      placeholder="10-digit mobile number"
+                      class="form-control"
+                      formControlName="mNumber"
+                    />
+                    <label for="mNo" class="form-group text-muted"
+                      >Mobile Number</label
+                    >
+                  </div>
+                </div>
+                <br class="break" />
+                <div class="row">
+                  <div class="col-5">
+                    <input
+                      type="number"
+                      placeholder="pincode"
+                      class="form-control"
+                      formControlName="pincode"
+                    />
+                    <label for="pincode" class="form-group text-muted">
+                      Pincode</label
+                    >
+                  </div>
+
+                  <div class="col-5">
+                    <input
+                      type="text"
+                      placeholder="locality"
+                      formControlName="locality"
+                      class="form-control"
+                    />
+                    <label for="loacl" class="form-group text-muted"
+                      >Locality</label
+                    >
+                  </div>
+                </div>
+                <br />
+                <div class="row">
+                  <div class="col-10">
+                    <input
+                      type="text"
+                      placeholder="Address(area and street)"
+                      formControlName="AreaAdd"
+                      class="form-control"
+                    />
+                    <label for="addressbox" class="form-group text-muted"
+                      >Address(area and Street)</label
+                    >
+                  </div>
+                </div>
+                <br />
+                <div class="row">
+                  <div class="col-5">
+                    <input
+                      type="text"
+                      placeholder="city/District/Town"
+                      class="form-control"
+                      formControlName="city"
+                    />
+                    <label for="town" class="form-group text-muted"
+                      >District</label
+                    >
+                  </div>
+                  <div class="col-5">
+                    <select
+                      name="state"
+                      id="states"
+                      class="form-select"
+                      formControlName="states"
+                      type="dropdown"
+                    >
+                      <option selected>select...</option>
+                      <option value="madhya pradesh">Madhya pradesh</option>
+                      <option value="Uttar pradesh">Uttar pradesh</option>
+                      <option value="Chhattisgarh">Chhattisgarh</option>
+                    </select>
+                    <label for="stateut" class="text-muted">State/UT</label>
+                  </div>
+                </div>
+                <div class="row mt-3">
+                  <div class="col-7"></div>
+                  <div class="col-4 subbtn">
+                    <button class="btn btn-outline-warning" routerLink="">
+                      Cancel</button
+                    >&nbsp;
+                    <button class="btn btn-primary" (click)="OnSubmit()">
+                      Submit
+                    </button>
+                  </div>
+                  <div class="row">
+                    <p>{{ addressForm.value.Addname }}</p>
+                    <p>{{ addressForm.value.mNumber }}</p>
+                    <p>
+                      {{ addressForm.value.AreaAdd }}
+                      {{ addressForm.value.locality }}
+                      {{ addressForm.value.city }}
+                      {{ addressForm.value.states }}
+                      {{ addressForm.value.pincode }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
